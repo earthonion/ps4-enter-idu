@@ -21,6 +21,12 @@ int kpayload_enter_idu(struct thread *td, struct kpayload_firmware_args *args) {
   return 0;
 }
 
+int enter_idu() {
+  struct kpayload_firmware_info kpayload_firmware_info;
+  kpayload_firmware_info.fw_version = get_firmware();
+  return kexec(&kpayload_exit_idu, &kpayload_firmware_info);
+}
+
 int _main(struct thread *td) {
   UNUSED(td);
 
@@ -33,7 +39,7 @@ int _main(struct thread *td) {
 #endif
 
   jailbreak();
-  exit_idu();
+  enter_idu();
 
   initSysUtil();
 
