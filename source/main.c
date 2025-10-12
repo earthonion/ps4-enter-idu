@@ -4,6 +4,23 @@
 
 #include "ps4.h"
 
+int kpayload_enter_idu(struct thread *td, struct kpayload_firmware_args *args) {
+  UNUSED(td);
+  void *kernel_base;
+
+  uint64_t (*icc_nvs_write)(uint32_t block, uint32_t offset, uint32_t size, void *value);
+
+  uint16_t fw_version = args->kpayload_firmware_info->fw_version;
+
+  // NOTE: This is a C preprocessor macro
+  build_kpayload(fw_version, icc_nvs_write_macro);
+
+  char flag = 0; //change this to 1????
+  icc_nvs_write(4, 0x1600, 1, &flag);
+
+  return 0;
+}
+
 int _main(struct thread *td) {
   UNUSED(td);
 
