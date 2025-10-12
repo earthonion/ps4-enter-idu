@@ -1,9 +1,12 @@
-Exit IDU
+Enter IDU
 ===
-[![Codacy Badge](https://app.codacy.com/project/badge/Grade/)](https://www.codacy.com/gh/Scene-Collective/ps4-exit-idu/dashboard)
 
 ## Synopsis
-Exits IDU mode and restarts the console.
+
+DO NOT RUN IF YOU DO NOT KNOW WHAT YOURE DOING.
+
+Enters IDU mode and restarts the console.
+
 
 For the payloads built with the most recent firmware supported visit [this repo].
 
@@ -15,3 +18,4 @@ For the payloads built with the most recent firmware supported visit [this repo]
 [//]: #
   [Scene Collective Payload SDK]: <https://github.com/Scene-Collective/ps4-payload-sdk>
   [this repo]: <https://github.com/Scene-Collective/ps4-payload-repo>
+  [Exit IDU payload by alazif]: <https://github.com/Scene-Collective/ps4-exit-idu>
