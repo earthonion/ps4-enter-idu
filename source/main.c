@@ -24,7 +24,7 @@ int kpayload_enter_idu(struct thread *td, struct kpayload_firmware_args *args) {
 int enter_idu() {
   struct kpayload_firmware_info kpayload_firmware_info;
   kpayload_firmware_info.fw_version = get_firmware();
-  return kexec(&kpayload_exit_idu, &kpayload_firmware_info);
+  return kexec(&kpayload_enter_idu, &kpayload_firmware_info);
 }
 
 int _main(struct thread *td) {
@@ -43,7 +43,7 @@ int _main(struct thread *td) {
 
   initSysUtil();
 
-  printf_notification("Exited IDU mode, restarting...");
+  printf_notification("Entered IDU mode, restarting...");
 
 #ifdef DEBUG_SOCKET
   printf_debug("Closing socket...\n");
