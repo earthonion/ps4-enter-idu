@@ -15,7 +15,7 @@ int kpayload_enter_idu(struct thread *td, struct kpayload_firmware_args *args) {
   // NOTE: This is a C preprocessor macro
   build_kpayload(fw_version, icc_nvs_write_macro);
 
-  char flag = 0; //change this to 1????
+  char flag = 1; //change this to 1????
   icc_nvs_write(4, 0x1600, 1, &flag);
 
   return 0;
