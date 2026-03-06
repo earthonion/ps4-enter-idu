@@ -47,8 +47,8 @@ int _main(struct thread *td) {
   printf_debug("Closing socket...\n");
   SckClose(DEBUG_SOCK);
 #endif
-  printf_notification("Enabling Custom Firmware...");
-  //printf_notification("Entered IDU mode, restarting in 5 seconds...");
+  //printf_notification("Enabling Custom Firmware...");
+  printf_notification("Entered IDU mode, restarting in 5 seconds...");
 
   sceKernelSleep(5);
 
