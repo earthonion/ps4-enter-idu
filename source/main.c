@@ -3,7 +3,7 @@
 #define DEBUG_PORT 9023
 
 #include "ps4.h"
-#include <unistd.h>
+
 
 int kpayload_enter_idu(struct thread *td, struct kpayload_firmware_args *args) {
   UNUSED(td);
@@ -50,7 +50,7 @@ int _main(struct thread *td) {
   printf_notification("Enabling Custom Firmware...");
   //printf_notification("Entered IDU mode, restarting in 5 seconds...");
 
-  sleep(5);
+  sceKernelSleep(5);
 
   reboot();
 
